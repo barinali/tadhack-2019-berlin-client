@@ -8,16 +8,141 @@
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
-  
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+        <div class="container-fluid container-main">
+          <header class="row">
+            <div class="col-6 col-md-6">
+              <div class="logo-wrapper">
+                <img class="logo" src="./images/logo.png" alt="Privacy Cat">
 
+                <span>6789CAT</span>
+              </div>
+            </div>
+          </header>
+
+          <div class="row">
+            <div class="col-12">
+              <div class="form-group">
+                <label for="api_username">Provider</label>
+
+                <select class="custom-select">
+                  <option value="simwood" selected>simwood</option>
+                  <option value="contact" disabled>Reach us to take your place here!</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <div class="form-group">
+                <label for="account_id">Account ID</label>
+
+                <input type="text" class="form-control" id="account_id" aria-describedby="account_id_help"
+                  placeholder="Account ID">
+                <small id="account_id_help" class="form-text text-muted">The account ID is provided by simwood.</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <div class="form-group">
+                <label for="api_username">API username</label>
+
+                <input type="text" class="form-control" id="api_username" aria-describedby="api_username_help"
+                  placeholder="API username">
+                <small id="api_username_help" class="form-text text-muted">The API username is provided by simwood.</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <div class="form-group">
+                <label for="api_password">API password</label>
+
+                <input type="text" class="form-control" id="api_password" aria-describedby="api_password_help"
+                  placeholder="API password">
+                <small id="api_password_help" class="form-text text-muted">The API password is provided by simwood.</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <div class="form-group">
+                <label for="real_phone_number">Real phone number</label>
+
+                <input type="text" class="form-control" id="real_phone_number" aria-describedby="real_phone_number_help"
+                  placeholder="Real phone number">
+                <small id="real_phone_number_help" class="form-text text-muted">This is your real phone number as we need to use it for communication for actions.</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12 text-right">
+              <button id="provision_number" type="button" class="btn btn-primary">Provision virtual number</button>
+            </div>
+          </div>
+
+          <div id="info_section" class="row hidden">
+            <div class="col-12">
+              <dl class="row">
+                <dt class="col-sm-4">Virtual number</dt>
+                <dd class="col-sm-8" id="virtual_number_text"></dd>
+              </dl>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <div class="form-group">
+                <label for="use_case">Use case</label>
+          
+                <select id="use_case" class="custom-select">
+                  <option value="1" selected>#1</option>
+                  <option value="2">#2</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-12">
+              <div class="form-group">
+                <label for="webhook_pathname">Webhook URL</label>
+          
+                <input type="text" class="form-control" id="webhook_pathname" aria-describedby="webhook_pathname_help"
+                  placeholder="/webhooks/calls">
+                <small id="webhook_pathname_help" class="form-text text-muted">This webhook URL must be relative e.g. `/sms-webhook`</small>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-12 text-right">
+              <button id="configure_webhook" type="button" class="btn btn-primary">Configure webhook</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <script src="./script.js"></script>
 </body>
 </html>

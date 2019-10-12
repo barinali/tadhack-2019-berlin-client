@@ -1,0 +1,45 @@
+body {
+  background: #e5e5e5;
+  padding-bottom: 30px;
+}
+
+.container-main {
+  background: #fff;
+  border-radius: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-top: 30px;
+  padding-bottom: 30px;
+}
+
+.container-main header {
+  margin-bottom: 30px;
+}
+
+.logo-wrapper {
+  display: inline-block;
+  background: black;
+  position: relative;
+}
+
+.logo-wrapper span {
+  --font-size: 48px;
+
+  display: inline-block;
+  font-size: var(--font-size);
+  height: var(--font-size);
+  font-weight: bold;
+  bottom: 3px;
+  left: calc(100% + 15px);
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+}
+
+.logo {
+  max-width: 100px;
+}
+
+.hidden {
+  display: none;
+}
