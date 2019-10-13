@@ -106,9 +106,7 @@ async function useCase1() {
     })
   };
 
-  const responseObject = await fetch(apiConfig.api_url + '/configure', options);
-  const response = await responseObject.json();
-  console.log(response);
+  await fetch(apiConfig.api_url + '/configure', options);
 }
 
 $provisionNumber.on('click', async function() {
