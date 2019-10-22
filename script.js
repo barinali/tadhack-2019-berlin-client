@@ -5,7 +5,6 @@ const $apiPassword = $('#api_password');
 const $accountId = $('#account_id');
 const $realPhoneNumber = $('#real_phone_number');
 const $webhookUrl = $('#webhook_pathname');
-const $useCase = $('#use_case');
 const $infoSection = $('#info_section');
 const $virtualNumberText = $('#virtual_number_text');
 
@@ -15,14 +14,9 @@ const account = {
 
 const API_URL = 'https://tadhack-berlin.herokuapp.com';
 
-const useCaseApis = {
-  1: {
-    api_url: 'https://markustoepfer.com:8080'
-  },
-  2: {
-    api_url: 'https://tadhack-berlin.herokuapp.com/'
-  }
-}
+const internalApi = {
+  api_url: 'https://markustoepfer.com:8080'
+};
 
 $accountId.val(localStorage.getItem('account_id'));
 $realPhoneNumber.val(localStorage.getItem('real_phone_number'));
@@ -34,10 +28,6 @@ function saveToLocalStorage() {
   localStorage.setItem('real_phone_number', getRealPhoneNumber());
   localStorage.setItem('api_username', getApiUsername());
   localStorage.setItem('api_password', getApiPassword());
-}
-
-function getCurrentUseCase() {
-  return $useCase.val();
 }
 
 function getAccId() {
@@ -65,7 +55,7 @@ function getAPIHeaders() {
 }
 
 function getWebhookPathnameAbsUrl() {
-  return new URL($webhookUrl.val(), getCurrentApiConfig().api_url);
+  return new URL($webhookUrl.val(), getApiConfig().api_url);
 }
 
 function getWebhookPathname() {
@@ -74,24 +64,8 @@ function getWebhookPathname() {
   return pathname;
 }
 
-function getCurrentApiConfig() {
-  const useCase = getCurrentUseCase();
-
-  return useCaseApis[useCase];
-}
-
 async function talkToInternalApi() {
-  const useCase = getCurrentUseCase();
-
-  if (useCase === '1') {
-    await useCase1();
-  } else {
-    alert('not implemented yet!');
-  }
-}
-
-async function useCase1() {
-  const apiConfig = getCurrentApiConfig(getCurrentUseCase());
+  const apiConfig = getApiConfig();
 
   const options = {
     method: 'POST',
