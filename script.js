@@ -125,7 +125,6 @@ $provisionNumber.on('click', async function() {
   const response = await responseObject.json();
 
   account.virtualNumber = response.number;
-  console.log(response);
 
   $virtualNumberText.text(account.virtualNumber);
   $infoSection.removeClass('hidden');
@@ -145,7 +144,6 @@ $configureWebhook.on('click', async function() {
 
   const responseObject = await fetch(`${API_URL}/webhook`, options);
   const response = await responseObject.json();
-  console.log(response);
 
   await talkToInternalApi();
 
